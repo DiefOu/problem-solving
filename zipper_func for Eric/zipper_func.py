@@ -1,0 +1,12 @@
+filename = input("Enter file name you would like to open, including the extension: ")
+fi = open(filename, "r")
+fo1 = open("left_values.txt", "w+")
+fo2 = open("right_values.txt", "w+")
+fileContents = fi.readlines()
+for line in fileContents:
+    splitLine = line.split(", ")
+    fo1.write(splitLine[0] + "\n")
+    fo2.write(splitLine[1])
+fi.close()
+fo1.close()
+fo2.close()
